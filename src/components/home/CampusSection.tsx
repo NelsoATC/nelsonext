@@ -1,9 +1,9 @@
 
+import Link from "next/link";
 import { motion } from 'framer-motion';
 import { MapPin, Clock } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 const CampusSection = () => {
   const { t } = useLanguage();
@@ -58,7 +58,7 @@ const CampusSection = () => {
                   {t('home.campus.madrid.feature3')}
                 </li>
               </ul>
-              <Link to="/madrid">
+              <Link href="/madrid">
                 <Button variant="outline" className="w-full">
                   {t('home.campus.viewMore')}
                 </Button>
@@ -107,7 +107,7 @@ const CampusSection = () => {
                   {t('home.campus.canarias.feature3')}
                 </li>
               </ul>
-              <Link to="/canarias">
+              <Link href="/canarias">
                 <Button variant="outline" className="w-full">
                   {t('home.campus.viewMore')}
                 </Button>

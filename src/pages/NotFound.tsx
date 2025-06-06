@@ -1,5 +1,7 @@
+'use client';
 
-import { useLocation, Link } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowLeft, Home, Plane, Radio, Radar } from "lucide-react";
@@ -7,16 +9,16 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
-  const location = useLocation();
+  const pathname = usePathname();
   const { language } = useLanguage();
   const isSpanish = language === 'es';
 
   useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
-      location.pathname
+      pathname
     );
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center bg-gray-50 px-4 relative overflow-hidden">
@@ -37,7 +39,6 @@ const NotFound = () => {
           </div>
         </div>
       </div>
-
       <div className="relative z-10 text-center max-w-md mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -82,7 +83,7 @@ const NotFound = () => {
           
           <div className="bg-gray-100 rounded-lg p-6 mb-8">
             <p className="text-gray-600 mb-2 font-mono text-sm">
-              <span className="text-primary font-semibold">&gt; ERROR:</span> {isSpanish ? 'Coordenadas' : 'Coordinates'} "{location.pathname}"
+              <span className="text-primary font-semibold">&gt; ERROR:</span> {isSpanish ? 'Coordenadas' : 'Coordinates'} "{pathname}"
             </p>
             <p className="text-gray-600 font-mono text-sm">
               <span className="text-primary font-semibold">&gt; STATUS:</span> {isSpanish ? 'Fuera de espacio aéreo controlado' : 'Outside controlled airspace'}
@@ -96,7 +97,7 @@ const NotFound = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Link to="/">
+          <Link href="/">
             <Button 
               size="lg"
               className="gap-2 bg-primary text-white hover:bg-primary/90 transition-colors"

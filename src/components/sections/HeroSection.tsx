@@ -1,8 +1,8 @@
 
+import Link from "next/link";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
@@ -38,7 +38,7 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white font-medium">
-              <Link to="/cursos">{isSpanish ? "Nuestros Cursos" : "Our Courses"}</Link>
+              <Link href="/cursos">{isSpanish ? "Nuestros Cursos" : "Our Courses"}</Link>
             </Button>
             <Button 
               asChild
@@ -46,7 +46,7 @@ const HeroSection = () => {
               variant="outline" 
               className="text-primary border-white hover:bg-white/10 font-medium"
             >
-              <Link to="/servicios">{isSpanish ? "Servicios ATC" : "ATC Services"}</Link>
+              <Link href="/servicios">{isSpanish ? "Servicios ATC" : "ATC Services"}</Link>
             </Button>
           </div>
         </div>

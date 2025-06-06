@@ -1,9 +1,9 @@
 
+import Link from "next/link";
 import { motion } from 'framer-motion';
 import { BookOpen, Monitor, Briefcase, ClipboardList } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -112,7 +112,7 @@ const ServicesSection = () => {
         </div>
         
         <div className="text-center">
-          <Link to="/servicios">
+          <Link href="/servicios">
             <Button size="lg">
               {t('home.services.cta')}
             </Button>

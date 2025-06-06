@@ -1,10 +1,12 @@
+'use client';
+
+import Link from "next/link";
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Calendar, Users, BookOpen, Target, Award, Clock, Briefcase, Plane } from "lucide-react";
-import { Link } from 'react-router-dom';
 import ContactoSection from "@/components/sections/ContactoSection";
 import CourseFAQ, { FAQItem } from "@/components/shared/CourseFAQ";
 import AlumniCarousel from "@/components/courses/AlumniCarousel";
@@ -76,7 +78,6 @@ const Bloque2 = () => {
         image="/images/og/course-og.jpg"
         type="website"
       />
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <motion.div
@@ -109,7 +110,7 @@ const Bloque2 = () => {
               {isSpanish ? "Solicitar Información" : "Request Information"}
             </Button>
             
-            <Link to="/cursos">
+            <Link href="/cursos">
               <Button variant="outline">
                 {isSpanish ? "Ver todos los cursos" : "View all courses"}
               </Button>

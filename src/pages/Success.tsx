@@ -1,13 +1,14 @@
+'use client';
 
+import { useRouter } from "next/navigation";
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
 
 const Success = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { language } = useLanguage();
   const isSpanish = language === 'es';
 
@@ -74,7 +75,7 @@ const Success = () => {
         
         <div className="space-y-3">
           <Button 
-            onClick={() => navigate('/')}
+            onClick={() => router.push('/')}
             className="w-full"
           >
             {isSpanish ? "Volver al inicio" : "Back to home"}
@@ -82,7 +83,7 @@ const Success = () => {
           
           <Button 
             variant="outline"
-            onClick={() => navigate('/cursos')}
+            onClick={() => router.push('/cursos')}
             className="w-full"
           >
             {isSpanish ? "Ver cursos" : "View courses"}

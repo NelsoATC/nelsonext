@@ -1,6 +1,7 @@
+'use client';
 
+import Head from "next/head";
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, User } from "lucide-react";
@@ -116,12 +117,11 @@ const InstructorFeedbackCard: React.FC<InstructorFeedbackProps> = ({ name, formU
 const Feedback: React.FC = () => {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Feedback para instructores | Nelso Formación</title>
         <meta name="description" content="Página interna para dejar feedback a los instructores de Nelso Formación" />
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
-      
+      </Head>
       <div className="container mx-auto py-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl font-bold text-center mb-2">Feedback para instructores</h1>

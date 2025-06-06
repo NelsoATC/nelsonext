@@ -1,3 +1,5 @@
+'use client';
+
 import { useQuery } from '@tanstack/react-query';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useEffect } from 'react';

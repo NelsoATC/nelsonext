@@ -1,6 +1,6 @@
 
+import Head from "next/head";
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SEOProps {
@@ -65,7 +65,7 @@ const SEO: React.FC<SEOProps> = ({
 
 
   return (
-    <Helmet>
+    <Head>
       <html lang={isSpanish ? "es" : "en"} />
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
@@ -73,14 +73,12 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#A6A5F8" />
       <meta name="author" content="Nelso Formación" />
-      
       {/* Robots meta tag */}
       {noindex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       )}
-      
       {/* FORCE OVERRIDE Open Graph / Facebook */}
       <meta property="og:type" content={type} data-react-helmet="true" />
       <meta property="og:url" content={fullUrl} data-react-helmet="true" />
@@ -95,7 +93,6 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image:alt" content={pageTitle} data-react-helmet="true" />
       <meta property="og:locale" content={isSpanish ? "es_ES" : "en_US"} data-react-helmet="true" />
       <meta property="og:site_name" content="Nelso Formación" data-react-helmet="true" />
-      
       {/* FORCE OVERRIDE Twitter */}
       <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
       <meta name="twitter:url" content={fullUrl} data-react-helmet="true" />
@@ -104,10 +101,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:image" content={imageUrl} data-react-helmet="true" />
       <meta name="twitter:site" content="@nelsoformacion" data-react-helmet="true" />
       <meta name="twitter:creator" content="@nelsoformacion" data-react-helmet="true" />
-      
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
-      
       {/* Additional metadata for SEO */}
       {type === 'article' && (
         <>
@@ -115,7 +110,6 @@ const SEO: React.FC<SEOProps> = ({
           <meta property="article:section" content="Education" />
         </>
       )}
-      
       {/* Enhanced JSON-LD Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify({
@@ -155,7 +149,6 @@ const SEO: React.FC<SEOProps> = ({
           "keywords": pageKeywords
         })}
       </script>
-      
       {/* Additional Schema for Courses */}
       <script type="application/ld+json">
         {JSON.stringify({
@@ -232,7 +225,7 @@ const SEO: React.FC<SEOProps> = ({
           ]
         })}
       </script>
-    </Helmet>
+    </Head>
   );
 };
 

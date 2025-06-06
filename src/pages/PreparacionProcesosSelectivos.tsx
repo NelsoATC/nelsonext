@@ -1,8 +1,9 @@
+'use client';
 
+import Link from "next/link";
 import { useLanguage } from '../contexts/LanguageContext';
 import ContactFormSection from '@/components/procesos-selectivos/ContactFormSection';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Users, Briefcase, Clock, Calendar, Sparkles, BookOpen } from "lucide-react";
@@ -73,7 +74,7 @@ const PreparacionProcesosSelectivos = () => {
                 {isSpanish ? "Solicitar Información" : "Request Information"}
               </Button>
               
-              <Link to="/cursos">
+              <Link href="/cursos">
                 <Button variant="outline">
                   {isSpanish ? "Ver todos los cursos" : "View all courses"}
                 </Button>

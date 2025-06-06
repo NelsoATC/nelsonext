@@ -1,8 +1,10 @@
+'use client';
+
+import Link from "next/link";
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
-import { Link } from 'react-router-dom';
 import { 
   Dialog,
   DialogContent,
@@ -247,7 +249,7 @@ const CookieConsent = () => {
                     : "We use our own and third-party cookies to improve your experience. You can accept all cookies, configure your preferences, or reject non-essential cookies."}
                 </p>
                 <div className="mt-2">
-                  <Link to={isSpanish ? "/politica-cookies" : "/cookie-policy"} className="text-primary text-sm hover:underline">
+                  <Link href={isSpanish ? "/politica-cookies" : "/cookie-policy"} className="text-primary text-sm hover:underline">
                     {isSpanish ? "Política de Cookies" : "Cookie Policy"}
                   </Link>
                 </div>
@@ -267,7 +269,6 @@ const CookieConsent = () => {
           </div>
         </div>
       )}
-
       {/* Cookie settings dialog */}
       <Dialog open={showPreferencesDialog} onOpenChange={setShowPreferencesDialog}>
         <DialogContent className="sm:max-w-[500px]">
@@ -380,7 +381,6 @@ const CookieConsent = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      
       {/* Cookie management floating button (only shown after initial consent) */}
       {localStorage.getItem('cookie-consent') && !showConsent && !showPreferencesDialog && (
         <Button 

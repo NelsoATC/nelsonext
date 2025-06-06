@@ -1,4 +1,6 @@
+'use client';
 
+import Link from "next/link";
 import React, { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEO from "@/components/shared/SEO";
@@ -9,7 +11,6 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Calendar, Users, BookOpen, Target, Briefcase } from "lucide-react";
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { Link } from 'react-router-dom';
 import CourseFAQ, { FAQItem } from "@/components/shared/CourseFAQ";
 
 const HabilitacionCompleta = () => {
@@ -83,7 +84,6 @@ const HabilitacionCompleta = () => {
         image="/images/og/course-og.jpg"
         type="website"
       />
-      
       <div className="min-h-screen py-12 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
@@ -117,7 +117,7 @@ const HabilitacionCompleta = () => {
                 {isSpanish ? "Solicitar Información" : "Request Information"}
               </Button>
               
-              <Link to="/cursos">
+              <Link href="/cursos">
                 <Button variant="outline">
                   {isSpanish ? "Ver todos los cursos" : "View all courses"}
                 </Button>
@@ -246,7 +246,7 @@ const HabilitacionCompleta = () => {
                       ? "Formación básica en control de aeródromo y habilitación ADC, con prácticas intensivas en simulador de torre 3D."
                       : "Basic training in aerodrome control and ADC rating, with intensive practice in 3D tower simulator."}
                   </p>
-                  <Link to="/modulo-1-torre" className="text-primary font-medium hover:underline">
+                  <Link href="/modulo-1-torre" className="text-primary font-medium hover:underline">
                     {isSpanish ? "Ver detalles del Bloque 1" : "View Block 1 details"}
                   </Link>
                 </CardContent>
@@ -262,7 +262,7 @@ const HabilitacionCompleta = () => {
                       ? "Formación avanzada en control de aproximación y área, incluyendo habilitaciones APP, APS, ACP, y ACS con prácticas en simuladores radar."
                       : "Advanced training in approach and area control, including APP, APS, ACP, and ACS ratings with practices in radar simulators."}
                   </p>
-                  <Link to="/modulo-2-aproximacion" className="text-primary font-medium hover:underline">
+                  <Link href="/modulo-2-aproximacion" className="text-primary font-medium hover:underline">
                     {isSpanish ? "Ver detalles del Bloque 2" : "View Block 2 details"}
                   </Link>
                 </CardContent>

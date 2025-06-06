@@ -1,5 +1,6 @@
+'use client';
 
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Bookmark } from 'lucide-react';
@@ -68,7 +69,7 @@ const CourseCard = ({ course, category, isSpanish }: CourseCardProps) => {
         </CardContent>
         <CardFooter>
           {course.path ? (
-            <Link to={course.path} className="w-full" onClick={handleScrollToTop}>
+            <Link href={course.path} className="w-full" onClick={handleScrollToTop}>
               <Button variant="default" className="w-full group border-none bg-gray-50 hover:bg-gray-100 text-gray-800">
                 {isSpanish ? "Más información" : "More information"}
                 <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

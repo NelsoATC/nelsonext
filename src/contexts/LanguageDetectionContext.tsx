@@ -1,7 +1,8 @@
+'use client';
 
+import { usePathname, useRouter } from "next/navigation";
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useLanguage } from './LanguageContext';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 // Define Spanish speaking countries ISO codes
 const SPANISH_SPEAKING_COUNTRIES = [
@@ -76,13 +77,15 @@ interface LanguageDetectionProviderProps {
   children: React.ReactNode;
 }
 
-export const LanguageDetectionProvider: React.FC<LanguageDetectionProviderProps> = ({ children }) => {
+export const LanguageDetectionProvider: React.FC<{
+  children?: React.ReactNode;
+}> = ({ children }) => {
   const { setLanguage, language } = useLanguage();
   const [isFromSpain, setIsFromSpain] = useState<boolean>(false);
   const [userCountry, setUserCountry] = useState<string | null>(null);
   const [forcedLanguage, setForcedLanguage] = useState<string | null>(null);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
 
   // Check if a route exists in the app
   const isValidRoute = (path: string): boolean => {
@@ -99,7 +102,7 @@ export const LanguageDetectionProvider: React.FC<LanguageDetectionProviderProps>
 
   // Handle URL changes when language changes
   useEffect(() => {
-    const currentPath = location.pathname;
+    const currentPath = pathname;
     
     // Skip redirect for home, blog, or non-mapped paths
     if (currentPath === '/' || currentPath === '/home' || currentPath.startsWith('/blog')) {
@@ -118,17 +121,17 @@ export const LanguageDetectionProvider: React.FC<LanguageDetectionProviderProps>
           if (!sessionStorage.getItem('recentUrlChange')) {
             sessionStorage.setItem('recentUrlChange', 'true');
             setTimeout(() => sessionStorage.removeItem('recentUrlChange'), 1000);
-            navigate(targetPath, { replace: true });
+            router.push(targetPath, { replace: true });
           }
         } else {
           // If the target path is not valid, navigate to the home page
           console.warn(`Target path ${targetPath} is not valid. Navigating to home page.`);
-          navigate('/', { replace: true });
+          router.push('/', { replace: true });
         }
         break;
       }
     }
-  }, [language, location.pathname, navigate]);
+  }, [language, pathname, router]);
 
   useEffect(() => {
     const detectLanguageAndLocation = async () => {
