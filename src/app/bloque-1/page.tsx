@@ -1,3 +1,3 @@
 
-      import Navigate to=" from '@/components/Navigate to="';
-      export default Navigate to=";
+      import NavigateTo from '@/components/NavigateTo';
+      export default NavigateTo;
