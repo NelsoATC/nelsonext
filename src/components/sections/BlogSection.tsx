@@ -1,8 +1,8 @@
 
+import Link from "next/link";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 import { ArrowRight, FileText, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useQuery } from "@tanstack/react-query";
@@ -95,7 +95,7 @@ const BlogSection = () => {
                     <CardContent>
                       <p className="text-gray-600 mb-4 line-clamp-3">{post.description}</p>
                       <Link 
-                        to={`/blog/${post.id}`} 
+                        href={`/blog/${post.id}`} 
                         className="text-primary font-medium hover:text-primary/80 flex items-center group-hover:underline"
                       >
                         {isSpanish ? "Leer más" : "Read more"}
@@ -111,7 +111,7 @@ const BlogSection = () => {
 
         <div className="text-center mt-12">
           <Link 
-            to="/blog" 
+            href="/blog" 
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium group"
           >
             {isSpanish ? "Ver todos los artículos" : "View all articles"}

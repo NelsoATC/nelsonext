@@ -1,9 +1,10 @@
+'use client';
 
+import Link from "next/link";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useLanguageDetection } from '@/contexts/LanguageDetectionContext';
 import { SectionHeader } from '@/components/services/SectionHeader';
 import { getCourseCategoriesData } from '@/data/coursesData';
-import { Link } from 'react-router-dom';
 import { ChevronRight, Award, Bookmark, CheckCircle } from 'lucide-react';
 import {
   Carousel,
@@ -75,7 +76,6 @@ export const AESACoursesSection = () => {
         <div className="absolute -right-32 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute -left-32 top-40 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl"></div>
       </div>
-      
       <div className="mb-12">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -97,7 +97,6 @@ export const AESACoursesSection = () => {
           </p>
         </motion.div>
       </div>
-      
       <div className="mt-12">
         <Carousel
           opts={{
@@ -126,7 +125,6 @@ export const AESACoursesSection = () => {
           </div>
         </Carousel>
       </div>
-      
       <div className="text-center mt-8">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -134,7 +132,7 @@ export const AESACoursesSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <Link to="/cursos" onClick={handleScrollToTop}>
+          <Link href="/cursos" onClick={handleScrollToTop}>
             <Button className="bg-primary hover:bg-primary/90 shadow-sm group px-6">
               {isSpanish ? "Ver todos nuestros cursos" : "View all our courses"}
               <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

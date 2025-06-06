@@ -1,7 +1,7 @@
 
+import Link from "next/link";
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 interface AdmissionFinancingProps {
   isSpanish: boolean;
@@ -31,7 +31,7 @@ const AdmissionFinancing = ({ isSpanish }: AdmissionFinancingProps) => {
         className="w-full"
         aria-label={isSpanish ? 'Más información sobre financiación' : 'More information about financing'}
       >
-        <Link to="/contact">
+        <Link href="/contact">
           {isSpanish ? 'Más información' : 'More information'}
         </Link>
       </Button>

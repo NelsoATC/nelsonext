@@ -1,8 +1,9 @@
+'use client';
 
+import Link from "next/link";
 import { motion } from 'framer-motion';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HeroProps {
@@ -32,7 +33,6 @@ const Hero = ({ scrollToForm }: HeroProps) => {
           }}
         ></div>
       </div>
-      
       {/* Content positioned over the background */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const Hero = ({ scrollToForm }: HeroProps) => {
             {isSpanish ? "Solicitar Información" : "Request Information"}
           </Button>
           
-          <Link to="/cursos">
+          <Link href="/cursos">
             <Button variant="outline">
               {isSpanish ? "Ver todos los cursos" : "View all courses"}
             </Button>

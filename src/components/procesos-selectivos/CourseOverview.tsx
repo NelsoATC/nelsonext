@@ -1,3 +1,4 @@
+'use client';
 
 import { motion } from 'framer-motion';
 import { Calendar, Users, BookOpen, Target, Clock, Monitor, School } from "lucide-react";

@@ -1,6 +1,7 @@
+'use client';
 
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, GraduationCap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Toggle } from "@/components/ui/toggle";
@@ -15,7 +16,7 @@ import {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
   const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {

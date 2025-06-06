@@ -1,6 +1,6 @@
 
+import Link from "next/link";
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Calendar, Tag, FileText } from 'lucide-react';
 import { Post } from '@/types/blog';
 import { formatDate } from '@/utils/dateUtils';
@@ -61,7 +61,7 @@ const PostCard = ({ post }: PostCardProps) => {
         </div>
         
         <Link
-          to={`/blog/${post.id}`}
+          href={`/blog/${post.id}`}
           className="text-primary hover:text-primary/80 font-medium inline-flex items-center"
         >
           {isSpanish ? 'Leer más' : 'Read more'} 

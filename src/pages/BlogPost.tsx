@@ -1,6 +1,8 @@
+'use client';
 
+import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 import { useQuery } from '@tanstack/react-query';
-import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Loader2, ChevronLeft, Calendar, User, Tag } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -13,7 +15,7 @@ import { formatDate } from '@/utils/dateUtils';
 const BlogPost = () => {
   const { id } = useParams();
   const { language } = useLanguage();
-  const navigate = useNavigate();
+  const router = useRouter();
   const isSpanish = language === 'es';
   
   // Helper function to handle image errors
@@ -62,7 +64,7 @@ const BlogPost = () => {
         <div className="mt-6">
           <Button 
             variant="outline"
-            onClick={() => navigate('/blog')}
+            onClick={() => router.push('/blog')}
           >
             <ChevronLeft className="w-4 h-4 mr-2" />
             {isSpanish ? 'Volver al blog' : 'Back to blog'}
@@ -76,7 +78,7 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen flex items-center justify-center flex-col gap-4">
         <p className="text-xl text-gray-600">{isSpanish ? 'Post no encontrado' : 'Post not found'}</p>
-        <Link to="/blog">
+        <Link href="/blog">
           <Button variant="outline">
             <ChevronLeft className="w-4 h-4 mr-2" />
             {isSpanish ? 'Volver al blog' : 'Back to blog'}
@@ -104,10 +106,9 @@ const BlogPost = () => {
         image={imageUrl}
         type="article"
       />
-      
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <Link to="/blog" className="text-primary hover:text-primary/80 flex items-center">
+          <Link href="/blog" className="text-primary hover:text-primary/80 flex items-center">
             <ChevronLeft className="w-4 h-4 mr-1" />
             {isSpanish ? 'Volver al blog' : 'Back to blog'}
           </Link>
@@ -169,7 +170,7 @@ const BlogPost = () => {
               {relatedPosts.map((relatedPost) => (
                 <Link 
                   key={relatedPost.id} 
-                  to={`/blog/${relatedPost.id}`}
+                  href={`/blog/${relatedPost.id}`}
                   className="group"
                 >
                   <div className="bg-white rounded-lg shadow-md overflow-hidden h-full hover:shadow-lg transition-shadow">

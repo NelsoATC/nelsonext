@@ -1,9 +1,9 @@
 
+import Link from "next/link";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { GraduationCap, Building, Users, BarChart } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Services2Section = () => {
   const { language } = useLanguage();
@@ -60,7 +60,6 @@ const Services2Section = () => {
           <rect width="100%" height="100%" fill="url(#circuit)" />
         </svg>
       </div>
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.div
@@ -123,7 +122,7 @@ const Services2Section = () => {
           className="mt-12 text-center"
         >
           <Link
-            to={isSpanish ? "/servicios" : "/services"}
+            href={isSpanish ? "/servicios" : "/services"}
             className="inline-flex items-center justify-center rounded-lg bg-[#8B5CF6] px-6 py-3 text-white hover:bg-[#7C4FD8] transition-all text-base font-medium"
           >
             {isSpanish ? "Ver todos los servicios" : "View all services"}

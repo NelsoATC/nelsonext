@@ -1,10 +1,10 @@
 
+import Link from "next/link";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Link } from "react-router-dom";
 
 const NuestrosCampusSection = () => {
   const { language } = useLanguage();
@@ -26,7 +26,7 @@ const NuestrosCampusSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <Link to="/madrid" className="block transition-transform hover:scale-105">
+          <Link href="/madrid" className="block transition-transform hover:scale-105">
             <Card className="overflow-hidden h-full">
               <img alt="Centro Madrid" className="w-full h-64 object-cover" src="/lovable-uploads/7a68e7ef-6f09-4ed0-b3a9-c45a75733265.jpg" />
               <CardHeader>
@@ -46,7 +46,7 @@ const NuestrosCampusSection = () => {
             </Card>
           </Link>
 
-          <Link to="/canarias" className="block transition-transform hover:scale-105">
+          <Link href="/canarias" className="block transition-transform hover:scale-105">
             <Card className="overflow-hidden h-full relative">
               {/* Cinta de "Próximamente" */}
               <div className="absolute top-0 right-0 w-full h-full overflow-hidden z-10 pointer-events-none">

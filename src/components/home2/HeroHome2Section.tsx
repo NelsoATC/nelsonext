@@ -1,9 +1,9 @@
 
+import Link from "next/link";
 import { motion } from 'framer-motion';
 import { Plane, BrainCircuit, Network } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroHome2Section = () => {
@@ -31,7 +31,6 @@ const HeroHome2Section = () => {
           />
         ))}
       </div>
-
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 py-32">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
@@ -111,7 +110,7 @@ const HeroHome2Section = () => {
               size="lg" 
               className="bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 text-white px-8"
             >
-              <Link to="/cursos">
+              <Link href="/cursos">
                 {isSpanish ? "Explorar Cursos" : "Explore Courses"}
               </Link>
             </Button>
@@ -121,7 +120,7 @@ const HeroHome2Section = () => {
               variant="outline" 
               className="text-white border-white/20 hover:bg-white/10"
             >
-              <Link to="/servicios">
+              <Link href="/servicios">
                 {isSpanish ? "Servicios ATC" : "ATC Services"}
               </Link>
             </Button>

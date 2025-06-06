@@ -1,9 +1,9 @@
 
+import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Link } from "react-router-dom";
 import AlumniCarousel from "@/components/courses/AlumniCarousel";
 
 // Import the refactored components
@@ -36,7 +36,7 @@ const FormacionATCSection = () => {
         <SectionHeader isSpanish={isSpanish} />
 
         <div className="grid md:grid-cols-2 gap-12 mb-12">
-          <Link to="/bloque-1-licencia-torre" className="block">
+          <Link href="/bloque-1-licencia-torre" className="block">
             <ModuleCard 
               moduleNumber="1"
               title={isSpanish ? "Básica y Torre" : "Basic and Tower"}
@@ -48,7 +48,7 @@ const FormacionATCSection = () => {
             />
           </Link>
           
-          <Link to="/bloque-2-licencias-ruta-aproximacion" className="block">
+          <Link href="/bloque-2-licencias-ruta-aproximacion" className="block">
             <ModuleCard 
               moduleNumber="2"
               title={isSpanish ? "Ruta y Aproximación" : "Route and Approach"}
@@ -61,7 +61,7 @@ const FormacionATCSection = () => {
           </Link>
         </div>
 
-        <Link to="/habilitacion-completa">
+        <Link href="/habilitacion-completa">
           <LicensesInfoSection isSpanish={isSpanish} />
         </Link>
         

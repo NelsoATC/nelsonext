@@ -1,6 +1,6 @@
 
+import Link from "next/link";
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
 
@@ -41,7 +41,7 @@ export const CourseCard = ({ title, description, duration, image, index, buttonT
         </CardHeader>
         <CardContent className="flex flex-col h-full">
           <p className="text-gray-600 mb-6 flex-grow">{description}</p>
-          <Link to="/cursos">
+          <Link href="/cursos">
             <Button variant="outline" className="w-full hover:bg-gray-50 transition-colors">
               {buttonText}
             </Button>

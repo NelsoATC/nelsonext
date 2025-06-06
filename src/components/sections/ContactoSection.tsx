@@ -1,8 +1,8 @@
 
+import { useRouter } from "next/navigation";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useNavigate } from "react-router-dom";
 import ContactMap from "@/components/contact/ContactMap";
 import { useTallyForm } from "@/hooks/useTallyForm";
 
@@ -11,9 +11,9 @@ interface ContactoSectionProps {
   showContactInfo?: boolean;
 }
 
-const ContactoSection = ({ location, showContactInfo = false }: ContactoSectionProps) => {
+const ContactoSection = ({ pathname, showContactInfo = false }: ContactoSectionProps) => {
   const { language } = useLanguage();
-  const navigate = useNavigate();
+  const router = useRouter();
   const isSpanish = language === 'es';
 
   // Use the new hook to load Tally with URL tracking
@@ -39,7 +39,7 @@ const ContactoSection = ({ location, showContactInfo = false }: ContactoSectionP
         {/* Conditionally render the layout based on whether we're on a campus page */}
         {location ? (
           // Two-column layout for campus pages
-          <div className="grid md:grid-cols-2 gap-8">
+          (<div className="grid md:grid-cols-2 gap-8">
             {/* Left column - Contact form */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <iframe 
@@ -54,15 +54,14 @@ const ContactoSection = ({ location, showContactInfo = false }: ContactoSectionP
                 name="contact-form"
               ></iframe>
             </div>
-            
             {/* Right column - Map only */}
             <div>
               <ContactMap location={location} isSpanish={isSpanish} />
             </div>
-          </div>
+          </div>)
         ) : (
           // Full-width layout for other pages
-          <div className="max-w-3xl mx-auto">
+          (<div className="max-w-3xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <iframe 
                 data-tally-src="https://tally.so/r/3j9AMR?transparentBackground=1&hideTitle=1" 
@@ -76,7 +75,7 @@ const ContactoSection = ({ location, showContactInfo = false }: ContactoSectionP
                 name="contact-form"
               ></iframe>
             </div>
-          </div>
+          </div>)
         )}
       </div>
     </section>

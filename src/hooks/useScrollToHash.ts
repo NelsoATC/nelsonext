@@ -1,13 +1,14 @@
+'use client';
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
 
 /**
  * Hook personalizado para desplazarse al elemento de anclaje especificado en el hash de la URL
  * cuando se navega a una página o cuando cambia el hash
  */
 export const useScrollToHash = () => {
-  const location = useLocation();
+  const pathname = usePathname();
   const lastHashRef = useRef<string>('');
 
   useEffect(() => {

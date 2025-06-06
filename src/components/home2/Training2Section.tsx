@@ -1,8 +1,8 @@
 
+import Link from "next/link";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Link } from 'react-router-dom';
 import { Layers, Monitor, Shield, Headphones } from 'lucide-react';
 
 const Training2Section = () => {
@@ -90,7 +90,6 @@ const Training2Section = () => {
           />
         ))}
       </div>
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.div
@@ -146,7 +145,7 @@ const Training2Section = () => {
                   <p className="text-gray-300 mb-4">{course.description}</p>
                   
                   <Link 
-                    to={course.link}
+                    href={course.link}
                     className="inline-flex items-center text-[#8B5CF6] hover:text-[#A78BFA] font-medium transition-colors"
                   >
                     {isSpanish ? "Más información" : "Learn more"} 

@@ -1,7 +1,7 @@
 
+import Link from "next/link";
 import { motion } from 'framer-motion';
 import { TowerControl, Plane, Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Badge } from "@/components/ui/badge";
@@ -21,10 +21,8 @@ const HeroHomeSection = () => {
           filter: "brightness(0.85)"
         }}
       />
-      
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
-      
       {/* Radar Effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-full h-full">
@@ -46,7 +44,6 @@ const HeroHomeSection = () => {
           </div>
         </div>
       </div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,7 +67,7 @@ const HeroHomeSection = () => {
                 {isSpanish 
                   ? "El Bloque 1 (Básica y Torre) comienza en Mayo. ¡Plazas limitadas!"
                   : "Block 1 (Basic and Tower) starts in May. Limited seats available!"}
-                <Link to="/bloque-1-torre" className="inline-block text-primary ml-2 underline-offset-2 hover:underline">
+                <Link href="/bloque-1-torre" className="inline-block text-primary ml-2 underline-offset-2 hover:underline">
                   {isSpanish ? "Más información" : "More info"}
                 </Link>
               </AlertDescription>
@@ -97,12 +94,12 @@ const HeroHomeSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-wrap justify-center gap-4 pt-6"
           >
-            <Link to="/cursos">
+            <Link href="/cursos">
               <Button size="lg" className="text-base">
                 {t('home.cta.courses')}
               </Button>
             </Link>
-            <Link to="/servicios">
+            <Link href="/servicios">
               <Button size="lg" variant="secondary" className="text-base bg-white/90 text-gray-800 hover:bg-white">
                 {t('home.cta.services')}
               </Button>
