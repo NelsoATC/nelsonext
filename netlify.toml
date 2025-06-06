@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-NF-Prerender = "true"
+    
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/prerender"
+  status = 200

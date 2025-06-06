@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NFG3RMZR');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Google Tag Manager Consent Mode v2 -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Default consent - Set to granted by default for all regions
+    gtag('consent', 'default', {
+      'ad_storage': 'granted',
+      'analytics_storage': 'granted',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'granted',
+      'security_storage': 'granted', // Security is always granted
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted'
+    });
+
+    // Make gtag available globally for the consent component
+    window.gtag = gtag;
+
+    // Function to update consent
+    function updateConsent(consent) {
+      gtag('consent', 'update', consent);
+    }
+
+    // Make updateConsent available globally
+    window.updateConsent = updateConsent;
+
+    // Check if user has consented and apply saved preferences immediately
+    (function() {
+      const hasConsented = localStorage.getItem('cookie-consent');
+      if (hasConsented) {
+        try {
+          const savedPrefs = JSON.parse(localStorage.getItem('cookie-preferences') || '{}');
+          
+          // Apply saved analytics preferences immediately
+          if (savedPrefs.analytics) {
+            gtag('consent', 'update', {
+              'analytics_storage': 'granted',
+              'ad_user_data': 'granted'
+            });
+          }
+          
+          // Apply saved marketing preferences immediately
+          if (savedPrefs.marketing) {
+            gtag('consent', 'update', {
+              'ad_storage': 'granted',
+              'ad_personalization': 'granted'
+            });
+          }
+        } catch (e) {
+          console.error('Error parsing saved cookie preferences');
+        }
+      }
+    })();
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y8V0XRXLJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7Y8V0XRXLJ');
+    </script>
+    
+    <!-- Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-971027451"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-971027451', { 'allow_enhanced_conversions' : true });
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <title>Nelso Formación | Centro de Formación de Controladores Aéreos en Madrid y Canarias</title>
+    <meta name="description" content="Fórmate como controlador aéreo con licencias ATC oficiales. Instalaciones modernas, instructores expertos y atención personalizada en Madrid y Canarias." />
+    <meta name="keywords" content="controlador aéreo, formación ATC, oposiciones controlador, navegación aérea, AESA, controladores, cursos ATC, Madrid, Canarias" />
+    <meta name="author" content="Nelso Formación" />
+    
+    <!-- Open Graph, Twitter Card and Canonical tags handled in React -->
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Nelso Formación",
+      "alternateName": "Centro de Formación de Controladores Aéreos Nelso",
+      "url": "https://nelsoformacion.com",
+      "logo": "https://nelsoformacion.com/logo.svg",
+      "description": "Centro especializado en la formación de controladores aéreos con cursos certificados y instalaciones modernas en Madrid y Canarias.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "@addressCountry": "ES",
+          "addressLocality": "Madrid",
+          "addressRegion": "Madrid"
+        },
+        {
+          "@type": "PostalAddress", 
+          "addressCountry": "ES",
+          "addressLocality": "Las Palmas de Gran Canaria",
+          "addressRegion": "Canarias"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish", "English"]
+      },
+      "hasCredential": "Certificado por AESA",
+      "educationalCredentialAwarded": "Licencia de Controlador Aéreo"
+    }
+    </script>
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFG3RMZR"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div id="root"></div>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

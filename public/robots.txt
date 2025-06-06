@@ -1,0 +1,33 @@
+
+# robots.txt for nelsoformacion.com
+User-agent: *
+Allow: /
+
+# Allow important directories
+Allow: /images/
+Allow: /docs/
+Allow: /blog/
+Allow: /cursos/
+Allow: /servicios/
+Allow: /bloque-1-licencia-torre
+Allow: /bloque-2-licencias-ruta-aproximacion
+Allow: /habilitacion-completa
+Allow: /preparacion-convocatoria
+Allow: /procesos-selectivos
+Allow: /formacion-avanzada
+Allow: /madrid
+Allow: /canarias
+Allow: /contacto
+
+# Block access to admin and internal files
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /api/
+Disallow: /feedback
+
+# Crawl delay to be respectful
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://nelsoformacion.com/sitemap.xml
+Sitemap: https://nelsoatctraining.com/sitemap-atc.xml

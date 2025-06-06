@@ -1,0 +1,67 @@
+
+# Redirects importantes para evitar 404s
+
+# Redirects de URLs antiguas del PHP site
+/ser_controlador.php /blog/como-es-la-profesion-controlador-aereo 301!
+/preguntas.php /preparacion-convocatoria#faqs 301!
+/noticias.php /blog 301!
+/temario.php /preparacion-convocatoria#temario 301!
+/curso_controlador_aereo.php /preparacion-convocatoria 301!
+/oposicion_controlador_aereo.php /preparacion-convocatoria 301!
+/contacto.php /contacto 301!
+/clases_presenciales.php / 301!
+/fotos_nelso_formacion.php / 301!
+/destinos_alumnos_nelso.php / 301!
+/alojamiento_madrid.php /madrid 301!
+/politica_cookies.php /politica-cookies 301!
+/politica_privacidad.php /politica-privacidad 301!
+
+# Redirects de URLs con guiones bajos
+/ser-controlador-aereo-la-profesion /blog/como-es-la-profesion-controlador-aereo 301!
+/preguntas-y-respuestas /preparacion-convocatoria#faqs 301!
+/noticias /blog 301!
+/temario /preparacion-convocatoria#temario 301!
+/curso-controlador-aereo /preparacion-convocatoria 301!
+/oposicion-controlador-aereo /preparacion-convocatoria 301!
+/contactar /contacto 301!
+/clases-presenciales / 301!
+/fotos-nelso-formacion / 301!
+/destinos-alumnos-nelso / 301!
+/alojamiento-en-madrid /madrid 301!
+
+# Redirects de módulos antiguos a bloques
+/modulo-1-torre /bloque-1-licencia-torre 301!
+/modulo-2-aproximacion /bloque-2-licencias-ruta-aproximacion 301!
+/modulo1-torre /bloque-1-licencia-torre 301!
+/module-1-tower /bloque-1-licencia-torre 301!
+/module-2-approach /bloque-2-licencias-ruta-aproximacion 301!
+
+# Redirects de URLs cortas
+/bloque-1 /bloque-1-licencia-torre 301!
+/bloque-2 /bloque-2-licencias-ruta-aproximacion 301!
+
+# Redirects de URLs antiguas de bloques
+/bloque-1-torre /bloque-1-licencia-torre 301!
+/bloque-2-aproximacion /bloque-2-licencias-ruta-aproximacion 301!
+
+# Redirects en inglés a español
+/courses /cursos 301!
+/services /servicios 301!
+/contact /contacto 301!
+/madrid-campus /madrid 301!
+/canary-islands /canarias 301!
+/advanced-training /formacion-avanzada 301!
+/complete-rating /habilitacion-completa 301!
+/block-1-tower /bloque-1-licencia-torre 301!
+/block-2-approach /bloque-2-licencias-ruta-aproximacion 301!
+/selection-process /procesos-selectivos 301!
+/call-preparation /preparacion-convocatoria 301!
+/privacy-policy /politica-privacidad 301!
+/cookie-policy /politica-cookies 301!
+
+# Redirects especiales
+/home2 / 301!
+/ignacio-baca https://forms.nelsoformacion.com/r/ignacio-baca 301!
+
+# Catch-all para SPA
+/* /index.html 200

@@ -1,0 +1,115 @@
+
+/* Estilos para el contenido enriquecido del blog */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a202c;
+}
+
+.post-content h1 {
+  font-size: 2.25rem;
+}
+
+.post-content h2 {
+  font-size: 1.875rem;
+  margin-top: 2rem;
+}
+
+.post-content h3 {
+  font-size: 1.5rem;
+}
+
+.post-content p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.post-content ul li {
+  list-style-type: disc;
+}
+
+.post-content ol li {
+  list-style-type: decimal;
+}
+
+.post-content a {
+  color: #3182ce;
+  text-decoration: underline;
+}
+
+/* Asegurando que los botones CTA siempre tengan texto blanco */
+.post-content a.inline-flex,
+.post-content a[class*="bg-"] {
+  color: #FFFFFF !important;
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: none;
+}
+
+.post-content blockquote {
+  border-left: 4px solid #4299e1;
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+  color: #4a5568;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+  margin: 1.5rem 0;
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.post-content table th,
+.post-content table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.post-content table th {
+  background-color: #f7fafc;
+  font-weight: 600;
+}
+
+/* Estilos responsivos */
+@media (max-width: 640px) {
+  .post-content h1 {
+    font-size: 1.875rem;
+  }
+  
+  .post-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.25rem;
+  }
+}
